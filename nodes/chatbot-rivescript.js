@@ -20,6 +20,7 @@ const getOrCreateBot = ({ script, scriptFile, context, debug }) => {
           console.log(lcd.green('[RIVESCRIPT] ') + lcd.grey(str));
         }
       });
+      bot.unicodePunctuation = new RegExp(/[!?]/g);
       bot.stream(script);
       bot.sortReplies();
       // store in context
